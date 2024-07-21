@@ -1,0 +1,23 @@
+package pages
+
+templ Head() {
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>AstroProject</title>
+		<link rel="stylesheet" href="/static/css/main.css"/>
+		<script src="https://unpkg.com/htmx.org"></script>
+		// Todo : Change it to pack it with the app
+	</head>
+}
+
+templ Page(contents templ.Component) {
+	<!DOCTYPE html>
+	<html>
+		@Head()
+		<body>
+			// @Nav(session) Your nav for example
+			@contents
+		</body>
+	</html>
+}

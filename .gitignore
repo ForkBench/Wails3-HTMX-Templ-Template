@@ -1,0 +1,51 @@
+# Fichiers et répertoires spécifiques à Go
+/bin
+/pkg
+/vendor
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDEs et éditeurs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Coverage reports
+coverage.out
+
+# Node.js / NPM
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnp
+.pnp.js
+
+# Svelte
+public/build/
+__sapper__/
+.svelte-kit/
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.task
+.env.production.local
+
+# Frontend specific
+frontend/dist
+
+*.bak
+*_templ.go
+*.out.css
