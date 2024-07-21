@@ -18,7 +18,7 @@ func main() {
 	r := routes.NewChiRouter()
 
 	app := application.New(application.Options{
-		Name:        "YourProject",
+		Name:        "{{.ProjectName}}",
 		Description: "A demo of using raw HTML & CSS",
 		Assets: application.AssetOptions{
 			Handler: application.AssetFileServerFS(assets),
@@ -33,7 +33,7 @@ func main() {
 	})
 
 	app.NewWebviewWindowWithOptions(application.WebviewWindowOptions{
-		Title: "Your Project",
+		Title: "{{.ProjectName}}",
 		Mac: application.MacWindow{
 			Backdrop: application.MacBackdropTranslucent,
 		},

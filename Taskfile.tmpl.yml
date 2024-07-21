@@ -1,7 +1,7 @@
 version: "3"
 
 vars:
-    APP_NAME: "YourProject"
+    APP_NAME: "{{.ProjectName}}"
     BIN_DIR: "bin"
 
 tasks:
@@ -31,7 +31,7 @@ tasks:
               vars:
                   ARCH: "{{.ARCH}}"
         cmds:
-            - go build {{.BUILD_FLAGS}} -o {{.BIN_DIR}}/YourProject.exe
+            - go build {{.BUILD_FLAGS}} -o {{.BIN_DIR}}/{{.ProjectName}}.exe
         vars:
             BUILD_FLAGS: '{{if eq .PRODUCTION "true"}}-tags production -trimpath -ldflags="-w -s -H windowsgui"{{else}}-gcflags=all="-l"{{end}}'
         env:
@@ -134,7 +134,7 @@ tasks:
               vars:
                   ARCH: "{{.ARCH}}"
         cmds:
-            - go build {{.BUILD_FLAGS}} -o {{.BIN_DIR}}/YourProject
+            - go build {{.BUILD_FLAGS}} -o {{.BIN_DIR}}/{{.ProjectName}}
         vars:
             BUILD_FLAGS: '{{if eq .PRODUCTION "true"}}-tags production -trimpath -ldflags="-w -s"{{else}}-gcflags=all="-l"{{end}}'
         env:
