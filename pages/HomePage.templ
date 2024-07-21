@@ -1,0 +1,14 @@
+package pages 
+
+templ HomePage() {
+	<div>
+		<h1>Hello World</h1>
+		<button
+			type="button"
+			hx-get="/hello"
+			hx-trigger="click"
+			hx-target="#hello"
+		>Click Here !</button>
+		<div id="hello"></div>
+	</div>
+}

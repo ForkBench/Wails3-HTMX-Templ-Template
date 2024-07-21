@@ -9,6 +9,7 @@ import (
 	"github.com/go-chi/httplog/v2"
 
 	"your_project_name/components"
+	"your_project_name/pages"
 )
 
 // NewChiRouter creates a new chi router.
@@ -39,8 +40,15 @@ func NewChiRouter() *chi.Mux {
 	r.Handle("/static/*", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		// ...
-		// Render index.html
+		// Render home page
+		HXRender(w, r, pages.HomePage())
+
+		// 200 OK status
+		w.WriteHeader(http.StatusOK)
+	})
+
+	r.Get("/hello", func(w http.ResponseWriter, r *http.Request) {
+		// Render hello
 		HXRender(w, r, components.HelloWorld())
 
 		// 200 OK status

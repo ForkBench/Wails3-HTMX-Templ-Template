@@ -6,8 +6,10 @@
     line-height: 24px;
     font-weight: 400;
     color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: rgba(27, 38, 54, 1);
+    color: black;
+
+    background-color: #e5e5f7;
+
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -20,6 +22,8 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+
+    text-align: center;
 }
 
 a {
@@ -35,6 +39,11 @@ a:hover {
 body {
     margin: 0;
     min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
@@ -43,19 +52,6 @@ button {
     border-radius: 5px;
     background-color: #003566;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
 
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-
-    a:hover {
-        color: #747bff;
-    }
+    text-align: center;
 }

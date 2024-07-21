@@ -49,3 +49,5 @@ frontend/dist
 *.bak
 *_templ.go
 *.out.css
+
+test
