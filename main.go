@@ -17,10 +17,11 @@ func main() {
 
 	r := routes.NewChiRouter()
 
+	// Create the application
 	app := application.New(application.Options{
-		Name:        "YourProject",
-		Description: "A demo of using raw HTML & CSS",
-		Assets: application.AssetOptions{
+		Name:        "YourProject",                    // Name of the application
+		Description: "A demo of using raw HTML & CSS", // Description of the application
+		Assets: application.AssetOptions{ // Assets to embed (our static files)
 			Handler: application.AssetFileServerFS(assets),
 			Middleware: func(next http.Handler) http.Handler {
 				r.NotFound(next.ServeHTTP)
@@ -32,16 +33,16 @@ func main() {
 		},
 	})
 
+	// V3 introduces multiple windows, so we need to create a window
 	app.NewWebviewWindowWithOptions(application.WebviewWindowOptions{
 		Title: "Your Project",
 		Mac: application.MacWindow{
 			Backdrop: application.MacBackdropTranslucent,
 		},
-		BackgroundColour: application.NewRGB(27, 38, 54),
-		URL:              "/",
-		Width:            1080,
-		Height:           720,
-		Centered:         false,
+		URL:      "/",  // URL to load when the window is created
+		Width:    1080, // Width of the window
+		Height:   720,  // Height of the window
+		Centered: false,
 	})
 
 	err := app.Run()
